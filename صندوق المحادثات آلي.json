@@ -1,0 +1,413 @@
+{
+  "intents": [
+    {
+      "intent": "التواصل",
+      "examples": [
+        {
+          "text": "ابي رقم التواصل"
+        },
+        {
+          "text": "احتاج رقم الاتصال"
+        },
+        {
+          "text": "كيف اتواصل معكم ؟"
+        },
+        {
+          "text": "ما هو ايميل التواصل"
+        },
+        {
+          "text": "ما هو رقم الاتصال"
+        },
+        {
+          "text": "ما هي طرق التواصل معكم"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "الروبوت",
+      "examples": [
+        {
+          "text": "عن ماذا يتحدث الروبوت؟"
+        },
+        {
+          "text": "ما هو الروبوت؟"
+        },
+        {
+          "text": "وش قصة الروبوت؟"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "الرووبوت",
+      "examples": [
+        {
+          "text": "ماهي إيجابيات الروبوت؟"
+        },
+        {
+          "text": "ما هي مزايا الروبوت؟"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "ترحيب",
+      "examples": [
+        {
+          "text": "السلام عليكم"
+        },
+        {
+          "text": "السلام عليكم , احتاج مساعدة"
+        },
+        {
+          "text": "اهلا"
+        },
+        {
+          "text": "مرحبا"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "عيوب",
+      "examples": [
+        {
+          "text": "ماهي سلبيات الروبوت؟"
+        },
+        {
+          "text": "ماهي عيوب الروبوت؟"
+        },
+        {
+          "text": "ماهي مشاكل الروبوت؟"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "كيف_الحال",
+      "examples": [
+        {
+          "text": "اخبارك؟"
+        },
+        {
+          "text": "شلونك؟"
+        },
+        {
+          "text": "كيف حالك؟"
+        },
+        {
+          "text": "و عليكم السلام كيف الحال؟"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "مشكلة",
+      "examples": [
+        {
+          "text": "ابي حل لمشكلة في الروبوت؟"
+        },
+        {
+          "text": "الروبوت يعلق عندي وش الحل ؟"
+        },
+        {
+          "text": "عند مشكله في الروبوت؟"
+        },
+        {
+          "text": "ليش الروبوت يعلق كثير ؟"
+        },
+        {
+          "text": "هل يوجد حل لتعليق الروبوت؟"
+        },
+        {
+          "text": "هل يوجد حل لمشكله لدي في الروبوت؟"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "نهاية",
+      "examples": [
+        {
+          "text": "OK"
+        },
+        {
+          "text": "اوك"
+        },
+        {
+          "text": "اوكي"
+        },
+        {
+          "text": "تمام شكرا لك"
+        },
+        {
+          "text": "تمام يعطيك العافيه"
+        },
+        {
+          "text": "حسنا"
+        },
+        {
+          "text": "يعطيك العافية"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "ماهي مزايا الروبوت",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "من مزايا الروبوت انه تم تحكم فيه عن بعد و عبر الجوال او شاشة الكمبيوتر دون اي تعقيد"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#الرووبوت",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_10_1625939143837",
+      "previous_sibling": "node_4_1625938385772"
+    },
+    {
+      "type": "standard",
+      "title": "التواصل",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "بيانات التواصل لدينا \n الجوال:0500000435\nran@gmail.com : الايميل \nعبر مواقع التواصل : \n@ran :تويتر\n@ran : انستقرام"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#التواصل",
+      "dialog_node": "node_3_1625940375516",
+      "previous_sibling": "node_8_1625939998429"
+    },
+    {
+      "type": "standard",
+      "title": "كيف الحال ؟",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "بخير الحمدلله, كيف اقدر اساعدك؟"
+              },
+              {
+                "text": "طيب , كيف اقدر اساعدك؟"
+              },
+              {
+                "text": "كويس, كيف اقدر اساعدك؟"
+              },
+              {
+                "text": "بالف صحه الحمدلله, كيف اقدر اساعدك؟"
+              },
+              {
+                "text": "تمام , كيف اقدر اساعدك؟"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#كيف_الحال",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_4_1625911878841",
+      "previous_sibling": "node_7_1625901277847"
+    },
+    {
+      "type": "standard",
+      "title": "الروبوت",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "هو الروبوت يتم تحكم فيه عن بعد في حلبة مصارعه حيث تم ضرب بالونة الخصم لفوز بالمبارة"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#الروبوت",
+      "dialog_node": "node_4_1625938385772",
+      "previous_sibling": "node_4_1625911878841"
+    },
+    {
+      "type": "standard",
+      "title": "السلام عليكم",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "مرحبا, عزيزي  كيف اقدر اخدمك ؟"
+              },
+              {
+                "text": "و عليكم السلام كيف اقدر اساعدك ؟"
+              },
+              {
+                "text": "اهلا , كيف اقدر اخدمك ؟"
+              },
+              {
+                "text": "مرحبا, معك الروبوت المبارزة هل تحتاج مساعدة؟"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#ترحيب",
+      "dialog_node": "node_7_1625901277847",
+      "previous_sibling": "مرحبا"
+    },
+    {
+      "type": "standard",
+      "title": "ماهي عيوب الروبوت؟",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": " للاسف ما زال الروبوت تحت التجربة و لم يتم اكتشاف عيوب الروبوت بدقه بعد "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#عيوب",
+      "dialog_node": "node_7_1625939745583",
+      "previous_sibling": "node_10_1625939143837"
+    },
+    {
+      "type": "standard",
+      "title": "مشاكل ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "نعتذر جدا عن مشكله التي حصل لك في الروبوت أتمنى التواصل معنا عن طريق الاتصال بنا في اقرب وقت"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#مشكلة",
+      "dialog_node": "node_8_1625939998429",
+      "previous_sibling": "node_7_1625939745583"
+    },
+    {
+      "type": "standard",
+      "title": "نهاية",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "سعدنا في خدمتكم  ...مع السلامة"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#نهاية",
+      "dialog_node": "node_8_1625940766209",
+      "previous_sibling": "node_3_1625940375516"
+    },
+    {
+      "type": "standard",
+      "title": "أي شيء آخر",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "لم أفهم، يمكنك محاولة اعادة الصياغة"
+              },
+              {
+                "text": "هل يمكنك اعادة صياغة عبارتك؟ أنا لا فهم"
+              },
+              {
+                "text": "لم أفهم قصدك"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "أي شيء آخر",
+      "previous_sibling": "node_8_1625940766209",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "السلام عليكم",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "السلام عليكم، كيف يمكنني مساعدتك؟"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "مرحبا"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": ":هل قصدت",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "كل ما سبق خطأ"
+    },
+    "human_agent_assist": {
+      "prompt": ":هل قصدت"
+    }
+  },
+  "learning_opt_out": false,
+  "name": "تحدث",
+  "language": "ar",
+  "description": ""
+}
